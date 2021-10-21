@@ -713,7 +713,7 @@ footer{
 }
 
 // 大螢幕尺寸 (>375 px)
-@media (min-width:375px){
+@media (min-width:480px){
   header{
     min-height: 64px;
     .brand{
