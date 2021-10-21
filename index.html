@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AC Cart</title>
     <link rel="stylesheet" href="./styles/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
     <!-- nav bar -->
@@ -193,19 +194,72 @@
                 <div class="form-row card-number">
                   <label for="">卡號</label>
                   <br />
-                  <input
-                    type="text"
-                    id="bank-account"
-                    maxlength="12"
-                    minlength="12"
-                    placeholder="1111 2222 3333 4444"
-                    required
-                  />
+                  <div class="bank-account-input">
+                    <input
+                      type="text"
+                      class="card input-seperate"
+                      id="card"
+                      name="bank-account-1"
+                      maxlength="4"
+                      size="4"
+                      placeholder="1111"
+                      required
+                    />
+                    <input
+                      type="text"
+                      class="card input-seperate"
+                      name="bank-account-2"
+                      maxlength="4"
+                      size="4"
+                      placeholder="2222"
+                      required
+                    />
+                    <input
+                      type="text"
+                      class="card input-seperate"
+                      name="bank-account-3"
+                      maxlength="4"
+                      size="4"
+                      placeholder="3333"
+                      required
+                    />
+                    <input
+                      type="text"
+                      class="card input-seperate"
+                      name="bank-account-4"
+                      maxlength="4"
+                      size="4"
+                      placeholder="4444"
+                      required
+                    />
+                  </div>
                 </div>
                 <div class="form-row effective-date">
                   <label for="">有效日期</label>
                   <br />
-                  <input type="date" id="effective-date" required />
+                  <!-- <input type="date" id="effective-date" required /> -->
+                  <div class="effective-date-input">
+                    <input
+                      type="text"
+                      name="mouth"
+                      class="date input-seperate"
+                      placeholder="MM"
+                      size="2"
+                      max="12"
+                      min="1"
+                      maxlength="2"
+                      required
+                    />
+                    <input
+                      type="text"
+                      name="year"
+                      class="date input-seperate"
+                      placeholder="YY"
+                      size="2"
+                      maxlength="2"
+                      required
+                    />
+                  </div>
                 </div>
                 <div class="form-row card-code">
                   <label for="">CVC / CCV</label>
@@ -213,7 +267,7 @@
                   <input
                     type="text"
                     maxlength="3"
-                    minlength="3"
+                    size="2"
                     id="card-code"
                     placeholder="111"
                     required

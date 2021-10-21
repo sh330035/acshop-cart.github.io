@@ -536,6 +536,39 @@ form{
       font-weight: 700;
       color: $label-text;
     }
+    .bank-account-input{
+      width: 100%;
+      border: 1px solid $body-color;
+      display: inline-block;
+      padding: 0.5rem;
+      margin-top: 3px;
+      border-radius: 5px;
+      input{
+        width: 20%;
+        border: 0;
+        height: 14px;
+        padding: unset;
+        background-color: unset
+      }
+    }
+
+    .effective-date-input{
+      width: 100%;
+      border: 1px solid $body-color;
+      display: inline-block;
+      padding: 0.5rem;
+      margin-top: 3px;
+      border-radius: 5px;
+      z-index: 1;
+      
+      input{
+        width: 35%;
+        border: 0;
+        padding: 0;
+        height: 14px;
+        background-color: unset;
+      }
+    }
   }
   input{
     @extend %input-style;

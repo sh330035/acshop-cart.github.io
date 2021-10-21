@@ -1182,6 +1182,41 @@ form .form-row > label {
   color: #808080;
 }
 
+form .form-row .bank-account-input {
+  width: 100%;
+  border: 1px solid #000000;
+  display: inline-block;
+  padding: 0.5rem;
+  margin-top: 3px;
+  border-radius: 5px;
+}
+
+form .form-row .bank-account-input input {
+  width: 20%;
+  border: 0;
+  height: 14px;
+  padding: unset;
+  background-color: unset;
+}
+
+form .form-row .effective-date-input {
+  width: 100%;
+  border: 1px solid #000000;
+  display: inline-block;
+  padding: 0.5rem;
+  margin-top: 3px;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+form .form-row .effective-date-input input {
+  width: 35%;
+  border: 0;
+  padding: 0;
+  height: 14px;
+  background-color: unset;
+}
+
 form input {
   width: 100%;
 }

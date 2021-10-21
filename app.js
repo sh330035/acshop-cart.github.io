@@ -58,7 +58,7 @@ const deliveryBoxes = document.querySelector('.delivery-boxes')
 const btnControl = document.getElementById('btn-control')
 const btnNext = document.querySelector('.btn-next')
 const btnPre = document.querySelector('.btn-previous')
-const btnSumit = document.querySelector('btn-submit')
+const btnSumit = document.querySelector('.btn-submit')
 
 let step = 0
 let fee = 0
@@ -161,3 +161,33 @@ btnControl.addEventListener('click', btnClickEventHandler)
 cartContent.addEventListener('click', countEventHandler)
 deliveryBoxes.addEventListener('change', deliveryChangeHandler)
 navbarToggler.addEventListener('click', navbarEventHandler)
+
+// 信用卡卡號、日期，限制數字；自動跳格 -> jquery 應用
+$('input.input-seperate').on('keydown', function (e) {
+  // 48~57為數字鍵之範圍；8為backspace；9為tab
+  // 96~105為鍵盤右側數字鍵之編號，限制非數字者無法輸入
+  if (
+    (e.which >= 48 && e.which <= 57) ||
+    (e.which >= 96 && e.which <= 105) ||
+    e.which == 8 ||
+    e.which == 9
+  ) {
+    // 輸入處若刪除至無數字(length=0)，則游標往前一格
+    if (e.target.value.length == 0 && e.which == 8) {
+      $(this).prev().focus()
+    }
+  } else {
+    e.preventDefault()
+  }
+})
+
+$('input.input-seperate').on('keyup', function (e) {
+  // \D 代表非數字字元，g 代表全域尋找
+  let str = e.target.value.replace(/\D/g, '')
+  // 取得當下input之size
+  let inputSize = $(this)[0].size
+  // 當輸入字數等於input size時，游標往下一格
+  if (str.length == inputSize) {
+    $(this).next().focus()
+  }
+})
